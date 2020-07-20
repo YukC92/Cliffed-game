@@ -1,0 +1,98 @@
+#header {
+    text-align: center;
+    background-color: yellow;
+    font-size: x-large;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.left-side-container {
+    border: 1px solid black;
+}
+
+.right-side-container {
+    border: 1px solid black;
+}
+
+#gamePanel{
+    width:300px;
+    height:400px;
+    background-image: url("https://ae01.alicdn.com/kf/HTB1V_DXNVXXXXa2XpXXq6xXFXXX0/LIFE-MAGIC-BOX-Beautiful-Castle-Backdrop-Backgrounds-Background-Photography-Xr-Sj-20.jpg");
+    background-size: cover;
+    position: relative;
+    overflow:hidden;
+}
+
+#gamePanel .player{
+    width:30px;
+    height:30px;
+    position:absolute;
+    background-image: url(img/player.png);
+}
+
+#gamePanel .left{
+    width:30px;
+    height:30px;
+    position:absolute;
+    background-image: url(img/left.png);
+}
+
+#gamePanel .right{
+    width:30px;
+    height:30px;
+    position:absolute;
+    background-image: url(img/right.png);
+}
+
+#gamePanel .normal{
+    position:absolute;
+    background-color:White;
+    overflow:hidden;
+}
+
+#gamePanel .miss{
+    position:absolute;
+    background-color:rgb(163,21,21);
+    overflow:hidden;
+}
+
+#gamePanel .flip{
+    position:absolute;
+    background-image: url(img/flip.png);
+    overflow:hidden;
+}
+
+#gamePanel .thorn{
+    position:absolute;
+    background-image: url(img/thorn.png);
+    overflow:hidden;
+}
+
+#gamePanel .score{
+    position:absolute;
+    font-size:12px;
+    color: black;
+    z-index:999;
+}
+
+#startBtn{
+    border-width:20px;
+    border-style:solid;
+    border-color:Black Black Black Green;
+    position:absolute;
+    left:140px;
+    top:200px;
+    cursor:pointer;
+    width:0px;
+    height:0px;
+    overflow:hidden;
+}
+
+.contact img {
+    width: 100px;
+    height: 100px;
+}
