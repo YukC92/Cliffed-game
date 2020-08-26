@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Cliffed</title>
     <link rel="stylesheet" href="./stylesheet.css">
 	</head>
 	
 	<body>
 		<div id="header">
-            <h1>Cliffed</h1>
+			<h1 class="rainbow-text">Cliffed</h1>
 		</div>
 		<div class="game-container">
 			<div class="left-side-container">
@@ -19,12 +19,29 @@
 				</div>
 				<div class="left-content">
 					<span>Press ⬅️ or ➡️ to move left or right</span>
+					<br>
+					<br>
+					<span>Use "i" to turn music on/off</span>
+					<br>
+					<br>
+					<span>Blcoks:
+						<br>
+						<br>
+						<img src="./img/thorn.png" alt="" width=50px height=10px>&nbsp;You will die if you land on this black
+						<br>
+						<br>
+						<img src="./img/flip.png" alt="" width=50px height=10px>&nbsp;It will bounce you up a little.
+					</span>
+					<br>
+					<br>
+					<h3>Try to survive as long as you can.🙂</h3>
 				</div>
 			</div>
 			<div class="middle-side-container">
+
 				<div>
 					<div id="gamePanel" tabindex="0">
-						<div class="score">score:<span id="score">0</span></div>
+						<div class="second">Time:<span id="second">0</span></div>
 						<div id="startBtn" onclick="Start(this)"></div>
 					</div>
 					
@@ -32,6 +49,22 @@
 						<source src="https://www.bensound.com/bensound-music/bensound-funkyelement.mp3" type="audio/mpeg">
 					</audio>
 					
+					<script type="text/javascript">
+						document.addEventListener("keypress", logKey);
+						var isPlaying = false;
+						function logKey(e) {
+							var myAudio = document.getElementById('myAudio')
+							if (e.keycode = 73 && !isPlaying) {
+								isPlaying = true;
+								myAudio.play();
+								myAudio.loop = true;
+							} else if (e.keycode = 73 && isPlaying) {
+								isPlaying = false
+								myAudio.pause();
+							}
+						}
+					</script>
+
 					<script type="text/javascript" src="js/Player.js"></script>
 					<script type="text/javascript" src="js/BlockBase.js"></script>
 					<script type="text/javascript" src="js/NormalBlock.js"></script>
@@ -40,6 +73,7 @@
 					<script type="text/javascript" src="js/MissBlock.js"></script>
 					<script type="text/javascript" src="js/BlockFactory.js"></script>
 					<script type="text/javascript" src="js/Game.js"></script>
+					<!-- <script type="text/javascript" src="js/Music.js"></script> -->
 
 				</div>
 			</div>
@@ -48,7 +82,8 @@
 					<h2>Contact</h2>
 					<a href="https://github.com/YukC92"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
 							alt="github" className="link-logo" /></a>
-					
+					<br>
+					<br>
 					<a href="https://www.linkedin.com/in/yuk-c-54830a192/"><img
 							src="https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png" alt="linkedin"
 							className="link-logo" /></a>

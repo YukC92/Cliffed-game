@@ -1,7 +1,16 @@
+body {
+    background-color: black;
+}
+
 #header {
     text-align: center;
-    background-color: yellow;
     font-size: x-large;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .game-container {
@@ -11,11 +20,20 @@
 }
 
 .left-side-container {
-    border: 1px solid black;
+    border: 1px solid blueviolet;
+    color: white;
+    width: 25%;
+}
+
+.left-side-container span {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .right-side-container {
-    border: 1px solid black;
+    border: 1px solid blueviolet;
+    color: white;
+    width: 25%;
 }
 
 #gamePanel{
@@ -72,7 +90,7 @@
     overflow:hidden;
 }
 
-#gamePanel .score{
+#gamePanel .second{
     position:absolute;
     font-size:12px;
     color: black;
