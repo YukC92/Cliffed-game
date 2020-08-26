@@ -1,5 +1,5 @@
 # Cliffed
-![Cliffed Screenshot](https://https://github.com/YukC92/Cliffed-game/blob/master/READMEIMG/README.png)
+![Cliffed Screenshot](https://github.com/YukC92/Cliffed-game/blob/master/READMEIMG/README.png)
 
 A mini game that test you how long you can survive in the game!
 
