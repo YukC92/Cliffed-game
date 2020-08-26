@@ -3,7 +3,7 @@
 var Game = {
     gamePanel: null,
     player: null,
-    score: 0,
+    second: 0,
     startBtn: null,
     createBlockId: 0,
     init: function () {
@@ -16,9 +16,6 @@ var Game = {
 
         this.startPlayer();
         this.startBlock();
-        let audio = document.getElementById("myAudio")
-        audio.loop = true;
-        audio.play()
     },
     startPlayer: function () {
         this.player = new Player();
@@ -40,7 +37,7 @@ var Game = {
         this.createBlockId = setInterval(function () {
             if (that.player.isLive) {
                 BlockFactory.createBlock();
-                that.addScore();
+                that.addsecond();
             }
         }, time);
     },
@@ -63,9 +60,9 @@ var Game = {
             this.player.keyup(e);
         }
     },
-    addScore: function () {
-        this.score += 1;
-        document.getElementById('score').innerHTML = Math.floor(this.score / 6);
+    addsecond: function () {
+        this.second += 1;
+        document.getElementById('second').innerHTML = this.second;
     },
     gameOver: function () {
         BlockFactory.stopBlock();
@@ -73,15 +70,14 @@ var Game = {
         document.body.onkeyup = null;
         Game.startBtn.style.display = '';
         clearInterval(this.createBlockId);
-        let audio = document.getElementById("myAudio")
-        audio.pause()
+        alert(`Game end. You survive ${this.second} seconds`)
     },
     reset: function () {
         BlockFactory.removeBlock();
         this.gamePanel.removeChild(this.player.div);
         this.gamePanel = null;
         this.player = null;
-        this.score = 0;
+        this.second = 0;
     },
 
     
