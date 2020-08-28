@@ -12,11 +12,13 @@ A mini game that test you how long you can survive in the game!
 
 ### Basic Rules:
 * Press ⬅️ or ➡️ to move left or right
-* Use "i" to turn music on/off
+* Use "-" to turn music on/off
 * Blcoks:
     * You will die if you land on Thorn block
     * It will bounce you up a little when you land on Flip block.
     * it will disappear after a while when you land on a red block.
+* You can add your name and score to the leaderboard.
+* The leaderboard will show the top 5 players' name and their score.
 
 #### Copyright
 * I don't own the background music.
