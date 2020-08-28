@@ -20,56 +20,74 @@ body {
 }
 
 .left-side-container {
-    border: 1px solid blueviolet;
     color: white;
     width: 25%;
+}
+
+.how-to-play {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.left-content h3 {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .left-side-container span {
     margin-left: 10px;
     margin-right: 10px;
+    display: block;
 }
 
 .right-side-container {
-    border: 1px solid blueviolet;
     color: white;
     width: 25%;
 }
 
 #gamePanel{
-    width:300px;
-    height:400px;
-    background-image: url("https://ae01.alicdn.com/kf/HTB1V_DXNVXXXXa2XpXXq6xXFXXX0/LIFE-MAGIC-BOX-Beautiful-Castle-Backdrop-Backgrounds-Background-Photography-Xr-Sj-20.jpg");
+    width:400px;
+    height:500px;
+    background-image: url("./img/background.png");
     background-size: cover;
     position: relative;
     overflow:hidden;
 }
 
 #gamePanel .player{
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     position:absolute;
-    background-image: url(img/player.png);
+    background-image: url(img/man.png);
+    background-position:  0% 0%;
 }
 
 #gamePanel .left{
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     position:absolute;
-    background-image: url(img/left.png);
+    background-image: url(img/man.png);
+    background-position: 68%;
 }
 
 #gamePanel .right{
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     position:absolute;
-    background-image: url(img/right.png);
+    background-image: url(img/man.png);
+    background-position: 100% 100%;
 }
 
 #gamePanel .normal{
     position:absolute;
     background-color:White;
     overflow:hidden;
+}
+
+.miss {
+    background-color:rgb(163,21,21);
 }
 
 #gamePanel .miss{
@@ -90,10 +108,10 @@ body {
     overflow:hidden;
 }
 
-#gamePanel .second{
+#gamePanel .score{
     position:absolute;
     font-size:12px;
-    color: black;
+    color: white;
     z-index:999;
 }
 
@@ -102,7 +120,7 @@ body {
     border-style:solid;
     border-color:Black Black Black Green;
     position:absolute;
-    left:140px;
+    left:50%;
     top:200px;
     cursor:pointer;
     width:0px;
@@ -111,6 +129,26 @@ body {
 }
 
 .contact img {
+    margin-top: 10px;
     width: 100px;
     height: 100px;
+
+}
+
+.contact {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#leaderboard {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#scoreboard {
+    margin-left: auto;
+    margin-right: auto;
 }

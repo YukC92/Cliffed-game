@@ -25,6 +25,10 @@ var Game = {
 
         this.player.moveDown();
 
+        var audio = document.getElementById("myAudio");
+        audio.play();
+        audio.loop = true;
+
     },
     startBlock: function () {
 
@@ -62,7 +66,7 @@ var Game = {
     },
     addsecond: function () {
         this.second += 1;
-        document.getElementById('second').innerHTML = this.second;
+        document.getElementById('score').innerHTML = this.second;
     },
     gameOver: function () {
         BlockFactory.stopBlock();
@@ -70,7 +74,10 @@ var Game = {
         document.body.onkeyup = null;
         Game.startBtn.style.display = '';
         clearInterval(this.createBlockId);
-        alert(`Game end. You survive ${this.second} seconds`)
+        var audio = document.getElementById("myAudio");
+        audio.pause();
+        audio.currentTime = 0;
+        alert(`Game end. You survived ${this.second} seconds`);
     },
     reset: function () {
         BlockFactory.removeBlock();
