@@ -15,33 +15,36 @@
 		<div class="game-container">
 			<div class="left-side-container">
 				<div class="how-to-play">
-					<h2>How To Play</h2>
+					<h1>How To Play</h1>
 				</div>
 				<div class="left-content">
-					<span>Press ⬅️ or ➡️ to move left or right</span>
+					<span>Press ⬅️ or ➡️ to move left or right.</span>
 					<br>
-					<br>
-					<span>Use "i" to turn music on/off</span>
-					<br>
-					<br>
-					<span>Blcoks:
+					<span>Use "-" to turn music on/off.</span>					<br>
+					<span>If you hit the top, you will die.</span>					<br>
+					<span>If you hit the bottom without standing on any block, you will die.</span>					<br>
+					<span>Blocks:
 						<br>
+						<span><img src="./img/thorn.png" alt="" width=50px height=10px>
+							<br>
+							You will die if you land on this block</span>
 						<br>
-						<img src="./img/thorn.png" alt="" width=50px height=10px>&nbsp;You will die if you land on this black
+						<span><img src="./img/flip.png" alt="" width=50px height=10px>
+							<br>
+							It will bounce you up a little.</span>
 						<br>
-						<br>
-						<img src="./img/flip.png" alt="" width=50px height=10px>&nbsp;It will bounce you up a little.
+						<span><img class="miss" width=50px height=10px>
+							<br>
+							When you land on this block, it will disappear after a while</span>
 					</span>
-					<br>
-					<br>
-					<h3>Try to survive as long as you can.🙂</h3>
+					<h2>Try to survive as long as you can. Feel free to put your name and score on the leaderboard.</h2>
 				</div>
 			</div>
 			<div class="middle-side-container">
 
 				<div>
 					<div id="gamePanel" tabindex="0">
-						<div class="second">Time:<span id="second">0</span></div>
+						<h4>Time:<span id="score">0</span></h4>
 						<div id="startBtn" onclick="Start(this)"></div>
 					</div>
 					
@@ -49,16 +52,20 @@
 						<source src="https://www.bensound.com/bensound-music/bensound-funkyelement.mp3" type="audio/mpeg">
 					</audio>
 					
+					<audio id="flip-sound">
+						<source src="./audio/Mario Jump.wav">
+					</audio>
+
 					<script type="text/javascript">
-						document.addEventListener("keypress", logKey);
+						document.addEventListener("keyup", logKey);
 						var isPlaying = false;
 						function logKey(e) {
 							var myAudio = document.getElementById('myAudio')
-							if (e.keycode = 73 && !isPlaying) {
+							if (e.key == "-" && !isPlaying) {
 								isPlaying = true;
 								myAudio.play();
 								myAudio.loop = true;
-							} else if (e.keycode = 73 && isPlaying) {
+							} else if (e.key == "-" && isPlaying) {
 								isPlaying = false
 								myAudio.pause();
 							}
@@ -74,22 +81,40 @@
 					<script type="text/javascript" src="js/BlockFactory.js"></script>
 					<script type="text/javascript" src="js/Game.js"></script>
 					<!-- <script type="text/javascript" src="js/Music.js"></script> -->
-
+					<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+					<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+					<!-- Import Firestore -->
+					<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+					<script type="text/javascript" src="js/Scoreboard.js"></script>
 				</div>
 			</div>
 			<div class="right-side-container">
 				<div class="contact">
-					<h2>Contact</h2>
+					<h1>Contact</h1>
 					<a href="https://github.com/YukC92"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
-							alt="github" className="link-logo" /></a>
+							alt="github" class="link-logo" /></a>
 					<br>
 					<br>
 					<a href="https://www.linkedin.com/in/yuk-c-54830a192/"><img
 							src="https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo-500x500.png" alt="linkedin"
-							className="link-logo" /></a>
+							class="link-logo" /></a>
 
 				</div>
 			</div>
+		</div>
+		<div id="leaderboard">
+			<h1>Leaderboard</h1>
+			<!-- Display our Scoreboard here -->
+				<input id="name" type="text" placeholder="Enter your name...">
+				<button onclick="saveScore()">Save Score</button>
+			<br>
+			<br>
+			<table id="scoreboard">
+				<tr>
+					<th>Name</th>
+					<th>Score</th>
+				</tr>
+			</table>
 		</div>
 	</body>
 </html>
