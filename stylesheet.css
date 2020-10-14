@@ -115,6 +115,10 @@ body {
     z-index:999;
 }
 
+#gamePanel {
+    color: white;
+}
+
 #startBtn{
     border-width:20px;
     border-style:solid;

@@ -11,6 +11,7 @@ FlipBlock.prototype.playOn = function (player) {
     player.flip();
     var audio = document.getElementById('flip-sound')
     audio.play()
+    audio.volume = 0.1;
     this.hasCheckPlayon = true;
 
     this.animation();

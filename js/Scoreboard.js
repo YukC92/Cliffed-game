@@ -56,4 +56,4 @@ function updateScores() {
     })
 }
 
-window.onload = updateScores();
+window.onload = setTimeout(updateScores, 1000);
