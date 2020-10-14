@@ -24,11 +24,6 @@ var Game = {
         this.player.gameOver = function () { Game.gameOver(); };
 
         this.player.moveDown();
-
-        var audio = document.getElementById("myAudio");
-        audio.play();
-        audio.loop = true;
-
     },
     startBlock: function () {
 
@@ -60,9 +55,10 @@ var Game = {
 
         e = e || window.event;
 
-        if (e.keyCode == 37 || e.keyCode == 39) {
+        if (e.keyCode == 37 || e.keyCode == 39 || e.keyCode == 38) {
             this.player.keyup(e);
         }
+
     },
     addsecond: function () {
         this.second += 1;

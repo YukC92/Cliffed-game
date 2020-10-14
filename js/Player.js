@@ -56,12 +56,10 @@ Player.prototype = {
             if (!that.isLive) clearInterval(that.moveXId);
             that.div.style.left = that.div.offsetLeft + (that.movepx * (direction == 'left' ? -1 : 1)) + 'px';
             if ((that.div.offsetLeft >= that.gamePanel.clientWidth - that.div.clientWidth) && direction == 'right') {
-                that.div.style.left = that.gamePanel.clientWidth - that.div.clientWidth + 'px';
-                clearInterval(that.moveXId);
+                that.div.style.left = 0 + 'px';
             }
             else if (that.div.offsetLeft <= 0 && direction == 'left') {
-                that.div.style.left = 0 + 'px';
-                clearInterval(that.moveXId);
+                that.div.style.left = that.gamePanel.clientWidth - that.div.clientWidth + 'px';
             }
         }
         this.moveXId = setInterval(process, this.movesp);
