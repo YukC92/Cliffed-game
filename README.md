@@ -9,6 +9,7 @@ A mini game that test you how long you can survive in the game!
 * JavaScript
 * HTML5
 * CSS
+* Firebase
 
 ### Basic Rules:
 * Press ⬅️ or ➡️ to move left or right
